@@ -41,7 +41,7 @@ app.use(morgan('dev'));
 // Serve up static assets (heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-  uri = process.env.URI  // connection string for Atlas here  
+  uri = process.env.ATLAS_URI  // connection string for Atlas here  
 } else {
   uri = "mongodb://localhost/Lifesports"
 }
