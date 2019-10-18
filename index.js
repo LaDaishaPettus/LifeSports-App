@@ -10,7 +10,7 @@ const morgan = require('morgan');
 
 const app = express();
 const port = process.env.PORT || 5000;
-let uri = process.env.ATLAS_URI
+let uri = ""
 
 // register middleware
 app.use(express.urlencoded({ extended: true }));
@@ -48,7 +48,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // connection to database
-mongoose.connect(process.env.URI, {
+mongoose.connect(process.env.ATLAS_URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true
